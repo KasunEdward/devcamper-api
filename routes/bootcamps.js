@@ -5,10 +5,14 @@ const {
   createBootcamp,
   updateBootcamp,
   deleteBootcamp,
+  bootcampUploadPhoto,
+
 } = require("../controllers/bootcamps");
 const router = express.Router();
 
 router.route("/").get(getBootcamps).post(createBootcamp);
+
+router.route("/:id/photo").put(bootcampUploadPhoto);
 
 router
   .route("/:id")
